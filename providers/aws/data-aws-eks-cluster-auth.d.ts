@@ -1,0 +1,29 @@
+import { Construct } from 'constructs';
+import * as cdktf from 'cdktf';
+export interface DataAwsEksClusterAuthConfig extends cdktf.TerraformMetaArguments {
+    /**
+     * Docs at Terraform Registry: {@link https://www.terraform.io/docs/providers/aws/d/eks_cluster_auth.html#name DataAwsEksClusterAuth#name}.
+     */
+    readonly name: string;
+}
+/**
+ * Represents a {@link https://www.terraform.io/docs/providers/aws/d/eks_cluster_auth.html aws_eks_cluster_auth}.
+ */
+export declare class DataAwsEksClusterAuth extends cdktf.TerraformDataSource {
+    /**
+     * Create a new {@link https://www.terraform.io/docs/providers/aws/d/eks_cluster_auth.html aws_eks_cluster_auth} Data Source.
+     *
+     * @param scope The scope in which to define this construct.
+     * @param id The scoped construct ID.
+     */
+    constructor(scope: Construct, id: string, config: DataAwsEksClusterAuthConfig);
+    get id(): string;
+    private _name;
+    get name(): string;
+    set name(value: string);
+    get nameInput(): string;
+    get token(): string;
+    protected synthesizeAttributes(): {
+        [name: string]: any;
+    };
+}
